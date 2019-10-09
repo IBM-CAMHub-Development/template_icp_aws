@@ -1,5 +1,5 @@
 module "gather_output" {
-    source 						= "git::https://github.com/IBM-CAMHub-Development/template_icp_modules.git?ref=2.3//public_cloud_output"
+    source 						= "git::https://github.com/IBM-CAMHub-Development/template_icp_modules.git?ref=3.2.1//public_cloud_output"
 	cluster_CA_domain 			= "${var.user_provided_cert_dns != "" ? var.user_provided_cert_dns : aws_lb.icp-console.dns_name}"
 	icp_master 					= "${aws_network_interface.mastervip.*.private_ip}"
 	ssh_user 					= "icpdeploy"
@@ -7,6 +7,7 @@ module "gather_output" {
 	bastion_host 				= "${aws_instance.bastion.0.public_ip}"
 	bastion_user    			= "ubuntu"
 	bastion_private_key_base64 	= "${var.privatekey}"
+	dependsOn 					= "true" 
 }
 
 output "registry_ca_cert"{
