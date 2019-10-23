@@ -66,8 +66,9 @@ See [Terraform documentation](https://www.terraform.io/intro/getting-started/var
 6. Provide AWS credentials using environment variables:
 
    ```bash
-   export AWS_ACCESS_KEY_ID=AKIAADGHASKDHGAKSDHGKASDHGK
-   export AWS_SECRET_ACCESS_KEY=BAzxcvq^.asdgaljlajdfl235bads
+   export AWS_ACCESS_KEY_ID=<access key id value>
+   
+   export AWS_SECRET_ACCESS_KEY=<secret access key value>
    ```
 
 7. Initialize Terraform using this command.
